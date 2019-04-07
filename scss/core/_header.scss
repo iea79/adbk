@@ -1,19 +1,135 @@
 /* Header
  ----------------------------------------------------------------------------- */
 .header {
-	background-color: #ccc;
-	padding: 10px 0;
-	@extend %clear_a;
-	&__logo {
-		float: left;
-		width: 150px;
-	}
+    // background-color: #ccc;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    z-index: 100;
+
+    &__logo {
+        font-size: 3em;
+        text-decoration: none;
+        // img {
+        // 	width: 9.563em;
+        // }
+    }
+
+    .icon-logo {
+        display: inline-block;
+        color: #fefefe;
+    }
+
+    &__left {
+        padding: 2.5em 1.7em 0.8em;
+        width: 50%;
+        text-align: right;
+    }
+
+    &__right {
+        padding: 2.4em 1.6em 0.8em;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+    }
+
+    &__descr {
+        max-width: 8.56em;
+        font-size: 1.125em;
+        line-height: 1.05em;
+        color: #ffffff;
+    }
+
+    &__contact {
+        text-align: right;
+
+        @media (min-width: 768px) {
+            margin-right: 2em;
+            padding-top: 0.4em;
+
+        }
+
+        a {
+            display: inline-block;
+            color: #ffffff;
+        }
+    }
+
+    &__phone {
+        font-size: 1.875em;
+        letter-spacing: 0.084em;
+        margin-bottom: 0.4em;
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            opacity: 1;
+
+            &:hover {
+                opacity: 0.9;
+                transform: scale(1);
+            }
+
+        }
+    }
+
+    &__callback {
+        font-size: 1.2em;
+        letter-spacing: 0.08em;
+        line-height: 1;
+
+        a {
+            text-decoration: underline;
+            display: inline-block;
+            text-decoration: none;
+
+            &:after {
+                content: '';
+                display: block;
+                border-top: 1px solid;
+                transition: 0.3s;
+                margin-left: 0;
+                width: 100%;
+            }
+
+            &:hover {
+
+                // text-decoration: none;
+                &:after {
+                    width: 0;
+                    margin-left: 50%;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+
+        &__left {
+            width: 100%;
+            padding-top: 1em;
+        }
+
+        &__right {
+            width: 100%;
+            padding-top: 1em;
+            padding-left: 1em;
+        }
+
+        &__contact {
+            // padding-top: 0;
+        }
+    }
+
 }
 
 // stiky menu
 .stiky {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }

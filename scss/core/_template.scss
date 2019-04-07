@@ -1,17 +1,27 @@
 // Main wrappers =====================================
-.wrapper {
+
+// .wrapper {
+// 	font-size: $main_font_size;
+// 	min-height: 100%;
+// 	height: auto !important;
+// 	height: 100%;
+// 	margin: 0 auto (-$footer_height); // отрицательный нижний отступ на высоту футера
+// }
+
+body {
 	font-size: $main_font_size;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto (-$footer_height) auto; // отрицательный нижний отступ на высоту футера
+}
+
+p {
+	font-size: 1.25em;
+	line-height: 1.875em;
 }
 
 /* Middle
  ----------------------------------------------------------------------------- */
-.main__content {
-	padding-bottom: $footer_height;
-	@extend %clear_a;
+.main {
+	// padding-bottom: $footer_height;
+	// @extend %clear_a;
 }
 
 .container_center {
@@ -24,5 +34,3 @@
 .column {
 	@include columns(4, 20px, 300px);
 }
-
-
