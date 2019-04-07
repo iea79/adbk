@@ -1,0 +1,372 @@
+-var frontVersion = '1';
+
+<!DOCTYPE html>
+html(lang="ru")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title ADBK
+
+    link(rel="stylesheet", href="css/style.css?"+frontVersion+"")
+body
+    .loader
+    header.header
+        .header__left
+            a.header__logo(href="index.html")
+                span.icon-logo
+        .header__right
+            .header__descr Брендинговое интернет-агентство полного цикла
+            .header__contact
+                .header__phone
+                    a(href="tel:+7(968)081 96 76") +7(968)081 96 76
+                .header__callback
+                    a(href="#") Заказать звонок
+    nav.nav
+        .nav__toggle
+            span
+        .nav__list#menu
+            .nav__item.active(data-menuanchor="brand")
+                a(href="#brand" data-index="1") Брэнд
+            .nav__item(data-menuanchor="who-we-are")
+                a(href="#who-we-are" data-index="2") Кто мы
+            .nav__item(data-menuanchor="about")
+                a(href="#about" data-index="3") О брэнде
+            .nav__item(data-menuanchor="profit")
+                a(href="#profit" data-index="4") Что получите
+            .nav__item(data-menuanchor="our-work")
+                a(href="#our-work" data-index="5") Наши работы
+            .nav__item(data-menuanchor="price")
+                a(href="#price" data-index="6") Цены
+            .nav__item(data-menuanchor="consultant")
+                a(href="#consultant" data-index="7") Консультация
+        .nav__count 0
+            span 1
+    main.main
+        // begin brand
+        section#brand.brand.section
+            .section__content
+                .section__left
+                    h2.section__title СОЗДАДИМ СИЛЬНЫЙ БРЕНД <br>И УВЕЛИЧИМ ПРИБЫЛЬ <br>КОМПАНИИ НА 20%
+                    .section__subtitle Повышайте узнаваемость, привлекайте <br>топ-клиентов и будьте лидером рынка
+
+                    .brand__action
+                        button.btn(data-toggle="modal" data-target="#presentation") Бесплатная консультация
+                .section__right
+
+        // end brand
+
+        // begin who-we-are
+        section#who-we-are.whoWeAre.section
+            .section__content
+                .section__left
+                    h2.section__title Кто мы
+                    p Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.
+                .section__right
+
+        // end who-we-are
+
+        // begin about
+        section#about.about.section
+            .section__content
+                .section__left
+                    h2.section__title Из чего состоит <br>успешный проект?
+                .section__right
+                    .aboutSteps
+                        .aboutSteps__item
+                            .aboutSteps__img
+                                img(src="img/about1.png", alt="")
+                            .aboutSteps__descr
+                                .aboutSteps__title Необычный и <br>запоминающийся дизайн
+                                |ABB инвестирует в установку быстрых зарядных станций для электротранспорта по всему миру, расширяя географию присутствия и создавая новый канал коммуникации с потребителем.
+                        .aboutSteps__item
+                            .aboutSteps__img
+                                img(src="img/about2.png", alt="")
+                            .aboutSteps__descr
+                                .aboutSteps__title Глубокая аналитика проекта
+                                |ABB инвестирует в установку быстрых зарядных станций для электротранспорта по всему миру, расширяя географию присутствия и создавая новый канал коммуникации с потребителем.
+                        .aboutSteps__item
+                            .aboutSteps__img
+                                img(src="img/about3.png", alt="")
+                            .aboutSteps__descr
+                                .aboutSteps__title Отличный отдел <br>продаж
+                                |ABB инвестирует в установку быстрых зарядных станций для электротранспорта по всему миру, расширяя географию присутствия и создавая новый канал коммуникации с потребителем.
+
+        // end about
+
+        // begin profit
+        section#profit.profit.section
+            .section__content
+                .section__left
+                    .profit__name
+                        h2.section__title Что вы получите
+                        p Это ценность, которая создает добавленную <br>стоимость и обеспечивает <br>конкурентоспособность или "невозможных" <br>слов.
+                    .profitNav
+                        .profitNav__item.active АУДИТ
+                        .profitNav__item СТРАТЕГИЯ
+                        .profitNav__item ДИЗАЙН
+                        .profitNav__item ВНЕДРЕНИЕ
+                .section__right
+                    .profitContent
+                        .profitContent__item.active
+                            ul
+                                li Корпоративный бренд
+                                li Корпоративная архитектура бренда
+                                li Дизайн упаковка
+                                li Корпоративный веб-сайт
+                                li Корпоративный видео ролик
+                                li Выставочный дизайн
+                        .profitContent__item
+                            ul
+                                li Корпоративный бренд
+                                li Корпоративная архитектура бренда
+                                li Дизайн упаковка
+                                li Корпоративный веб-сайт
+                                li Корпоративный видео ролик
+                        .profitContent__item
+                            ul
+                                li Корпоративный бренд
+                                li Корпоративная архитектура бренда
+                                li Дизайн упаковка
+                                li Корпоративный веб-сайт
+                                li Корпоративный видео ролик
+                                li Выставочный дизайн
+                                li Корпоративный видео ролик
+                                li Выставочный дизайн
+                        .profitContent__item
+                            ul
+                                li Корпоративный бренд
+                                li Корпоративная архитектура бренда
+                                li Дизайн упаковка
+                                li Корпоративный видео ролик
+                                li Выставочный дизайн
+
+        // end profit
+
+        // begin our-work
+        section#our-work.ourWork.section
+            .section__content
+                .section__left
+                    .ourWork__top
+                        h2.section__title Наши работы
+                        .section__subtitle 62 довольных клиента 
+                        .ourWorkThumbs
+                            .ourWorkThumbs__item
+                                img(src="img/bonefrance_logo.png", alt="")
+                            .ourWorkThumbs__item
+                                img(src="img/logo2.png", alt="")
+                            .ourWorkThumbs__item
+                                img(src="img/logo3.png", alt="")
+                            .ourWorkThumbs__item
+                                img(src="img/logo4.png", alt="")
+                            .ourWorkThumbs__item
+                                img(src="img/logo5.png", alt="")
+                    .ourWork__bottom
+                        .ourWorkDescr
+                            .ourWorkDescr__item
+                                .ourWorkDescr__logo
+                                    img(src="img/bonefrance_logo.png", alt="")
+                                .ourWorkDescr__site
+                                    a(href="#") http://www.gidravlikgroup.ru/
+                                .ourWorkDescr__text Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+                                .ourWorkDescr__deals
+                                    .ourWorkDescr__price 
+                                        .ourWorkDescr__label Стоимость: 
+                                        |100 000 руб
+                                    .ourWorkDescr__date
+                                        .ourWorkDescr__label Срок: 
+                                        |25 денй
+
+                            .ourWorkDescr__item
+                                .ourWorkDescr__logo
+                                    img(src="img/gidravlik_logo.png", alt="")
+                                .ourWorkDescr__site
+                                    a(href="#") http://www.gidravlikgroup.ru/
+                                .ourWorkDescr__text Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+                                .ourWorkDescr__deals
+                                    .ourWorkDescr__price 
+                                        .ourWorkDescr__label Стоимость: 
+                                        |100 000 руб
+                                    .ourWorkDescr__date
+                                        .ourWorkDescr__label Срок: 
+                                        |25 денй
+                            .ourWorkDescr__item
+                                .ourWorkDescr__logo
+                                    img(src="img/pechnov_logo.png", alt="")
+                                .ourWorkDescr__site
+                                    a(href="#") http://www.gidravlikgroup.ru/
+                                .ourWorkDescr__text Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+                                .ourWorkDescr__deals
+                                    .ourWorkDescr__price 
+                                        .ourWorkDescr__label Стоимость: 
+                                        |100 000 руб
+                                    .ourWorkDescr__date
+                                        .ourWorkDescr__label Срок: 
+                                        |25 денй
+                            .ourWorkDescr__item
+                                .ourWorkDescr__logo
+                                    img(src="img/technov_logo.png", alt="")
+                                .ourWorkDescr__site
+                                    a(href="#") http://www.gidravlikgroup.ru/
+                                .ourWorkDescr__text Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+                                .ourWorkDescr__deals
+                                    .ourWorkDescr__price 
+                                        .ourWorkDescr__label Стоимость: 
+                                        |100 000 руб
+                                    .ourWorkDescr__date
+                                        .ourWorkDescr__label Срок: 
+                                        |25 денй
+                            .ourWorkDescr__item
+                                .ourWorkDescr__logo
+                                    img(src="img/eurosporttour_logo.png", alt="")
+                                .ourWorkDescr__site
+                                    a(href="#") http://www.gidravlikgroup.ru/
+                                .ourWorkDescr__text Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+                                .ourWorkDescr__deals
+                                    .ourWorkDescr__price 
+                                        .ourWorkDescr__label Стоимость: 
+                                        |100 000 руб
+                                    .ourWorkDescr__date
+                                        .ourWorkDescr__label Срок: 
+                                        |25 денй
+                .section__right
+                    .ourWorkView
+                        .ourWorkView__item
+                            .ourWorkView__img(style="background-image: url(img/work_bg_1.png)")
+                        .ourWorkView__item
+                            .ourWorkView__img(style="background-image: url(img/work_bg_2.png)")
+                        .ourWorkView__item
+                            .ourWorkView__img(style="background-image: url(img/work_bg_3.png)")
+                        .ourWorkView__item
+                            .ourWorkView__img(style="background-image: url(img/work_bg_4.png)")
+                        .ourWorkView__item
+                            .ourWorkView__img(style="background-image: url(img/work_bg_5.png)")
+
+        // end our-work
+
+        // begin price
+        section#price.price.section
+            .section__content
+                .section__left
+                    .priceCol
+                        .priceCol__item
+                            .price__title Корпоративный сайт
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Индивидуальный дизайн страницы
+                                p Маркетинговая проработка товара или услуги
+                                p Удобная система управления конетнтом
+                                p Написание рекламных призывов
+                                p Наполнение страницы контентом
+                                p Простая форма заказа услуги/товара
+                            .price__action Уточнить стоимось
+                        .priceCol__item
+                            .price__title Интернет-магазин
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Индивидуальный дизайн страницы
+                                p Маркетинговая проработка товара или услуги
+                                p Удобная система управления конетнтом
+                                p Написание рекламных призывов
+                                p Наполнение страницы контентом
+                                p Простая форма заказа услуги/товара
+                            .price__action Уточнить стоимось
+                        .priceCol__item
+                            .price__title Мобильное приложение
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Проектирование интерфейсов приложения
+                                p Разработка дизайна всех необходимых экранов
+                                p Реализация технического решения
+                                p Тестирование на реальных пользователях
+                                p Регистрация приложения в App Store и Google Play
+                            .price__action Уточнить стоимось
+                .section__right
+                    .priceCol
+                        .priceCol__item
+                            .price__title Одностраничный сайт
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Индивидуальный дизайн страницы
+                                p Маркетинговая проработка товара или услуги
+                                p Удобная система управления конетнтом
+                                p Написание рекламных призывов
+                                p Наполнение страницы контентом
+                                p Простая форма заказа услуги/товара
+                            .price__action Уточнить стоимось
+                        .priceCol__item
+                            .price__title Сайт-визитка
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Индивидуальный дизайн 2-х основных типов страниц
+                                p Удобная система управления конетнтом
+                                p Написание маркетингового текста и стимулирующих рекламных призывов
+                                p Наполнение страниц контетом
+                                p Базовый классификатор товаров/услуг
+                                p Функциональная форма заказа услуги/товара
+                            .price__action Уточнить стоимось
+                        .priceCol__item
+                            .price__title Портал / Сервис
+                            .price__summ от 69 900 р.
+                            .price__text
+                                p Индивидуальный дизайн более 5-и основных типов страниц
+                                p Функциональная система управления конетнтом и услугами
+                                p Стимулирующие маркетинговые блоки и баннеры
+                                p Наполнение страниц контетом
+                                p Расширенный классификатор товаров/услуг
+                                p Функциональная форма заказа услуги/товара
+                                p Калькулятор стоимости услуг
+                            .price__action Уточнить стоимось
+
+        // end price
+
+        // begin consultant
+        section#consultant.brand.brand_last.section
+            .section__content
+                .section__left
+                    h2.section__title ПОЛУЧИТЕ РАСЧЕТ СТОИМОСТИ РАЗРАБОТКИ ВАШЕГО БРЕНДА
+                    .section__subtitle Повышайте узнаваемость, привлекайте <br>топ-клиентов и будьте лидером рынка
+                    .brand__action
+                        button.btn(data-toggle="modal" data-target="#presentation") Бесплатная консультация
+                .section__right(style="background-image: url(img/agriculture-clouds-colors-1558732.jpg)")
+
+        // end consultant
+
+
+    // Begin Modal presentation
+    .modal.fade.presentation#presentation
+        .modal-dialog
+            .modal-content
+                a(href="#" class="modal-close" data-dismiss="modal")
+                .modal-header
+                    .modal-title СКАЧАЙТЕ ПРЕЗЕНТАЦИЮ <br>С ОПИСАНИЕМ УСЛУГ И <br>ПРИМЕРАМИ РАБОТ
+                .modal-body
+                    .presentation__sub Заполнив форму вы получите:
+                    .presentationList
+                        .presentationList__item Подробную презентацию о компании
+                        .presentationList__item Описание этапов и условий работы
+                        .presentationList__item Примеры выполненных проектов
+                    form.form(action="send.php")
+                        .form__row
+                            input(type="text" placeholder="Введите имя")
+                        .form__row
+                            input(type="tel" placeholder="Введите номер телефона")
+                        .form__row
+                            button.btn(type="submit") Скачать презентацию
+                        .form__privacy
+                            label
+                                input(type="checkbox") 
+                                |Вы соглашаетесь с 
+                                a(href="") условиями обработки персональных данных
+    //- .modal-footer
+    // End modal presentation
+
+
+    script(src="js/jquery.js")
+    script(src="js/browserDetect.js")
+    script(src="js/jquery-onepage-scroll.js")
+    script(src="js/jquery.maskedinput.js")
+    script(src="js/modal.js")
+    script(src="js/slick.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js")
+    script(src="js/function.js?"+frontVersion+"")
