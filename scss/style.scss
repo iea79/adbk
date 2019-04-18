@@ -6,12 +6,63 @@
  *
  */
 
+.main {
+    overflow: hidden;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .icon-logo {
+        display: inline-block;
+        font-size: 34px;
+        color: #d21c39;
+    }
+
+    h1 {
+        font-size: 12px;
+        margin: 15px;
+
+        &:after {
+            content: '';
+            display: block;
+            margin-top: 10px;
+            height: 3px;
+            background-color: #d21c39;
+            animation: load 3s infinite linear;
+        }
+    }
+}
+
+
+@keyframes load {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
 @import 'mixins/mixin';
 
 // Fonts
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,900);
 @font-face {
     font-family: 'Akrobat';
+    font-display: fallback;
     src: url("../fonts/Akrobat-Black.eot");
     src: local('Akrobat-Black'), url("../fonts/Akrobat-Black.eot?#iefix") format('embedded-opentype'), url("../fonts/Akrobat-Black.woff2") format('woff2'), url("../fonts/Akrobat-Black.woff") format('woff'), url("../fonts/Akrobat-Black.ttf") format('truetype'), url("../fonts/Akrobat-Black.svg#Akrobat-Black") format('svg');
     font-weight: 900;
@@ -20,6 +71,7 @@
 
 @font-face {
     font-family: 'Akrobat';
+    font-display: fallback;
     src: url("../fonts/Akrobat-Regular.eot");
     src: local('Akrobat-Regular'), url("../fonts/Akrobat-Regular.eot?#iefix") format('embedded-opentype'), url("../fonts/Akrobat-Regular.woff2") format('woff2'), url("../fonts/Akrobat-Regular.woff") format('woff'), url("../fonts/Akrobat-Regular.ttf") format('truetype'), url("../fonts/Akrobat-Regular.svg#Akrobat-Regular") format('svg');
     font-weight: 400;
@@ -28,6 +80,7 @@
 
 @font-face {
     font-family: 'Akrobat';
+    font-display: fallback;
     src: url("../fonts/Akrobat-Bold.eot");
     src: local('Akrobat-Bold'), url("../fonts/Akrobat-Bold.eot?#iefix") format('embedded-opentype'), url("../fonts/Akrobat-Bold.woff2") format('woff2'), url("../fonts/Akrobat-Bold.woff") format('woff'), url("../fonts/Akrobat-Bold.ttf") format('truetype'), url("../fonts/Akrobat-Bold.svg#Akrobat-Bold") format('svg');
     font-weight: bold;
@@ -36,6 +89,7 @@
 
 @font-face {
     font-family: 'adbk';
+    font-display: fallback;
     src: url("../fonts/adbk.eot?rs92xm");
     src: url("../fonts/adbk.eot?rs92xm#iefix") format('embedded-opentype'), url("../fonts/adbk.ttf?rs92xm") format('truetype'), url("../fonts/adbk.woff?rs92xm") format('woff'), url("../fonts/adbk.svg?rs92xm#adbk") format('svg');
     font-weight: normal;
@@ -46,6 +100,7 @@
 [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'adbk' !important;
+    font-display: fallback;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -73,27 +128,18 @@
 @import 'core/reset';
 @import 'core/template';
 @import 'core/header';
-@import 'core/footer';
+// @import 'core/footer';
 @import 'core/form';
-@import 'core/grid';
-@import 'core/soc';
-@import 'core/breadcrumb';
-@import 'core/pagination';
+// @import 'core/grid';
+// @import 'core/soc';
+// @import 'core/breadcrumb';
+// @import 'core/pagination';
 @import 'core/buttons';
-@import 'core/video';
+// @import 'core/video';
 @import 'vendor/onepage-scroll';
 @import 'vendor/_modal';
 @import 'vendor/slick';
 
-.loader {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    z-index: 150;
-}
 
 .nav {
     position: absolute;
@@ -405,7 +451,7 @@
         }
 
         &__right {
-            background: url("../img/brand_bg.jpg") center no-repeat;
+            background: url("../img/brand_bg.webp") center no-repeat;
             background-size: cover;
 
             @media (min-width: 768px) {
@@ -510,7 +556,7 @@
         &__title {}
 
         &__right {
-            background: url("../img/who-we-are-bg.png") center no-repeat;
+            background: url("../img/who-we-are-bg.webp") center no-repeat;
             background-size: cover;
 
             @media (min-width: 768px) {
@@ -563,7 +609,7 @@
         &__content {}
 
         &__left {
-            background: url("../img/about_bg.png") center right no-repeat;
+            background: url("../img/about_bg.webp") center right no-repeat;
             background-size: cover;
             transition: 0.5s;
             // width: 0;
@@ -737,7 +783,7 @@
         &__title {}
 
         &__right {
-            background: url("../img/profit_bg.png") center no-repeat;
+            background: url("../img/profit_bg.webp") center no-repeat;
             background-size: cover;
             position: relative;
             right: -100%;
@@ -1291,6 +1337,7 @@
     .slick {
         &-slide {
             outline: 0;
+            flex: none;
         }
     }
 
@@ -1420,7 +1467,7 @@
         &__left {
             flex-direction: row;
             padding-left: 0;
-            background: url("../img/price_bg.jpg") 0 0 no-repeat;
+            background: url("../img/price_bg.webp") 0 0 no-repeat;
             background-size: cover;
             color: #fff;
             position: relative;
@@ -1641,5 +1688,27 @@
                 margin-right: 0.5em;
             }
         }
+    }
+}
+
+.noWebP {
+    .brand .section__right {
+        background-image: url('../img/brand_bg.jpg');
+    }
+
+    .whoWeAre .section__right {
+        background-image: url('../img/who-we-are-bg.png');
+    }
+
+    .about .section__left {
+        background-image: url('../img/about_bg.png');
+    }
+
+    .profit .section__right {
+        background-image: url('../img/profit_bg.png');
+    }
+
+    .price .section__left {
+        background-image: url('../img/price_bg.jpg');
     }
 }

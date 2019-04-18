@@ -1,4 +1,4 @@
--var frontVersion = '1';
+-var frontVersion = '1.2';
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -6,11 +6,14 @@ head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title ADBK
+    title ADBK - Брендинговое интернет-агентство полного цикла
 
     link(rel="stylesheet", href="css/style.css?"+frontVersion+"")
+
 body
     .loader
+        span.icon-logo
+        h1 Брендинговое интернет-агентство полного цикла
     header.header
         .header__left
             a.header__logo(href="index.html")
@@ -232,15 +235,15 @@ body
                 .section__right
                     .ourWorkView
                         .ourWorkView__item
-                            .ourWorkView__img(style="background-image: url(img/work_bg_1.png)")
+                            .ourWorkView__img(style="background-image: url(img/work_bg_1.webp)")
                         .ourWorkView__item
-                            .ourWorkView__img(style="background-image: url(img/work_bg_2.png)")
+                            .ourWorkView__img(style="background-image: url(img/work_bg_2.webp)")
                         .ourWorkView__item
-                            .ourWorkView__img(style="background-image: url(img/work_bg_3.png)")
+                            .ourWorkView__img(style="background-image: url(img/work_bg_3.webp)")
                         .ourWorkView__item
-                            .ourWorkView__img(style="background-image: url(img/work_bg_4.png)")
+                            .ourWorkView__img(style="background-image: url(img/work_bg_4.webp)")
                         .ourWorkView__item
-                            .ourWorkView__img(style="background-image: url(img/work_bg_5.png)")
+                            .ourWorkView__img(style="background-image: url(img/work_bg_5.webp)")
 
         // end our-work
 
@@ -328,7 +331,7 @@ body
                     .section__subtitle Повышайте узнаваемость, привлекайте <br>топ-клиентов и будьте лидером рынка
                     .brand__action
                         button.btn(data-toggle="modal" data-target="#presentation") Бесплатная консультация
-                .section__right(style="background-image: url(img/agriculture-clouds-colors-1558732.jpg)")
+                .section__right(style="background-image: url(img/agriculture-clouds-colors-1558732.webp)")
 
         // end consultant
 
@@ -362,11 +365,10 @@ body
     // End modal presentation
 
 
+
     script(src="js/jquery.js")
-    script(src="js/browserDetect.js")
     script(src="js/jquery-onepage-scroll.js")
     script(src="js/jquery.maskedinput.js")
-    script(src="js/modal.js")
     script(src="js/slick.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.0/TweenMax.min.js")
-    script(src="js/function.js?"+frontVersion+"")
+    script(src="js/modal.js")
+    script(src="js/app.js?"+frontVersion+"")
