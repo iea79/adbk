@@ -33,6 +33,11 @@
 		// background-color: transparentize(#fff, .2);
 		// color: #000;
 	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
 	@each $status_el, $color_bg in $el_colors {
 		&_#{$status_el} {
 			background-color: $color_bg;

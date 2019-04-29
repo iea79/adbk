@@ -27,6 +27,19 @@
 	}
 
 	&__label {}
+
+	&__message {
+		padding-top: 2em;
+		font-weight: 600;
+
+		&.error {
+			color: #d21c39;
+		}
+
+		&:empty {
+			padding: 0;
+		}
+	}
 }
 // Input text and textarea ================================================
 input:not([type]),

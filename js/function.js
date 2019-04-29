@@ -13,6 +13,7 @@ var TempApp = {
     mdWidth: 992,
     smWidth: 768,
     resized: false,
+    subject: '',
     iOS: function() {
         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
@@ -58,7 +59,15 @@ $(document).ready(function() {
         event.preventDefault();
         $('.nav__item').removeClass('active');
         // $('.nav').removeClass('open');
-        fullpage_api.moveTo($(this).data('index'));
+        if (!isXsWidth()) {
+            fullpage_api.moveTo($(this).data('index'));
+        } else {
+        	var scroll_el = $(this).attr('href');
+        		if ($(scroll_el).length != 0) {
+        		$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
+                $('.nav').removeClass('open');
+    		}
+        }
     });
 
     $('.nav__toggle').on('click', function(event) {
@@ -109,6 +118,11 @@ $(document).ready(function() {
         focusOnSelect: true
     });
 
+    $('[data-toggle="modal"]').on('click', function() {
+        TempApp.subject = $(this).data('subject');
+        // console.log(TempApp.subject);
+    });
+
     formSubmit();
 
     checkOnResize();
@@ -150,6 +164,25 @@ function initFullPage() {
                 }
             }
         });
+
+        $('[href="#privacy"]').on('click', function() {
+            $(this).closest('.modal').modal('hide');
+        });
+
+        $('.modal').on('show.bs.modal', function() {
+            if (!$('body').hasClass('modal-open')) {
+                fullpage_api.setAllowScrolling(false);
+                fullpage_api.setKeyboardScrolling(false);
+            }
+        });
+
+        $('.modal').on('hide.bs.modal', function() {
+            if (($('.modal.in').length-1) < 1) {
+                fullpage_api.setAllowScrolling(true);
+                fullpage_api.setKeyboardScrolling(true);
+            }
+        });
+
     }
 }
 
@@ -189,8 +222,32 @@ function fontResize() {
 
 // Простая проверка форм на заполненность и отправка аяксом
 function formSubmit() {
+    // var formMessage = '<div class="form__message"></div>';
+    var formMessage = {
+        template: '<div class="form__message"></div>',
+        message: function(type, text) {
+            $('.form__message')
+                .addClass(type)
+                .html(text);
+        },
+        open: function(form) {
+            if ($('.form__message').length < 1) {
+                form.append(formMessage.template);
+            }
+        },
+        close: function() {
+            $('.form__message').remove();
+        },
+        modalShow: function(text) {
+            $('.modal.in').modal('hide');
+            $('#success').modal('show');
+            $('#success .modal-message').html(text);
+        }
+    };
+
     $("[type=submit]").on('click', function(e) {
         e.preventDefault();
+        $('[name=subject]').val(TempApp.subject);
         var form = $(this).closest('.form');
         var url = form.attr('action');
         var form_data = form.serialize();
@@ -211,6 +268,12 @@ function formSubmit() {
         });
 
         if (empty > 0) {
+            formMessage.open(form);
+            formMessage.message('error', 'Не заполнены обязательные поля');
+            // $('.form__message').addClass('error').text('Не заполнены обязательные поля');
+            setTimeout(function () {
+                formMessage.close();
+            }, 5000);
             return false;
         } else {
             $.ajax({
@@ -220,14 +283,17 @@ function formSubmit() {
                 data: form_data,
                 success: function(response) {
                     // $('#success').modal('show');
-                    // console.log('success');
                     console.log(response);
-                    // console.log(data);
-                    // document.location.href = "success.html";
+                    if (form.hasClass('formPresent')) {
+                        formMessage.modalShow('Вы можете скачать нашу презентацию перейдя по ссылке <br><br><a href="ABDK_PR1.pdf" target="blank">Скачать презентацию</a>');
+                    } else {
+                        formMessage.modalShow('Наши специалисты свяжутся с вами в ближайшее время');
+                    }
                 },
                 error: function(response) {
                     // $('#success').modal('show');
                     // console.log('error');
+                    formMessage.message('error', 'Что-то пошло не так :( <br> Пожалуйста, отправьте форму повторно.');
                     console.log(response);
                 }
             });

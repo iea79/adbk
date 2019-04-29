@@ -116,6 +116,8 @@
     &-title {
         margin: 0;
         line-height: 1.42857143;
+        font-size: 1.3em;
+        font-weight: 600;
     }
 
     &-body {
@@ -143,4 +145,41 @@
         }
     }
 
+    &-message {
+        font-size: 1.1em;
+
+        a {
+            color: #57565c;
+        }
+    }
+
+}
+
+.privacy {
+    &.in {
+        align-items: flex-start;
+    }
+
+    .modal {
+        &-dialog {
+            max-width: 90%;
+            flex: none;
+        }
+
+        &-title {
+            font-size: 1.7em;
+        }
+
+        &-body {
+            text-align: left;
+
+            h3 {
+                font-size: 1.3em;
+            }
+        }
+
+        &-footer {
+            padding-bottom: 0;
+        }
+    }
 }

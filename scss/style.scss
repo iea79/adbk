@@ -44,7 +44,6 @@
     }
 }
 
-
 @keyframes load {
     from {
         width: 0;
@@ -54,7 +53,6 @@
         width: 100%;
     }
 }
-
 
 @import 'mixins/mixin';
 
@@ -139,7 +137,6 @@
 @import 'vendor/onepage-scroll';
 @import 'vendor/_modal';
 @import 'vendor/slick';
-
 
 .nav {
     position: absolute;
@@ -320,7 +317,7 @@
     }
 
     @media (max-width: 767px) {
-        width: 0em;
+        width: 0;
         background-color: transparent;
         border-right: 0;
         position: fixed;
@@ -328,7 +325,6 @@
         &.open {
             background-color: #fff;
         }
-
 
         &__toggle {
             top: 1.5em;
@@ -417,6 +413,9 @@
         &__left {
             position: relative;
             overflow: hidden;
+            @media (min-width: 768px) {
+                padding-right: 1em;
+            }
 
             &:after,
             &:before {
@@ -464,7 +463,6 @@
     &_last {
         .section {
             &__left {
-
                 &:after,
                 &:before {
                     display: none;
@@ -476,7 +474,6 @@
     &.active {
         .section {
             &__left {
-
                 &:after,
                 &:before {}
 
@@ -523,7 +520,7 @@
                     right: 0;
                     bottom: 0;
                     left: 0;
-                    background-color: rgba(#000, 0.4)
+                    background-color: rgba(#000, 0.4);
                 }
             }
 
@@ -597,7 +594,6 @@
             &__right {
                 display: none;
 
-
             }
 
         }
@@ -646,6 +642,12 @@
         display: flex;
         flex-grow: 1;
 
+        &__content {
+            @media (min-width: 768px) {
+                min-height: 43em;
+            }
+        }
+
         &__item {
             // padding-top: 0em;
             width: 33.3%;
@@ -693,7 +695,7 @@
 
         &__descr {
             color: #57565c;
-            font-size: 1.25em;
+            font-size: 1.2em;
             line-height: 1.6;
             padding: 0 1.9em;
         }
@@ -802,6 +804,12 @@
     &__name {
         width: 65%;
         margin-right: 2%;
+
+        p {
+            @media (min-width: 768px) {
+                width: 86%;
+            }
+        }
     }
 
     &Nav {
@@ -893,8 +901,9 @@
 
             li {
                 font-size: 1.3em;
-                margin: 2.3em 0;
+                margin: 1.3em 0;
                 font-weight: 600;
+                line-height: 2;
             }
         }
 
@@ -1402,7 +1411,12 @@
 
     &__text {
         font-size: 0.9em;
-        min-height: 26em;
+        // min-height: 26em;
+        margin-bottom: 2em;
+
+        &:last-child {
+            margin-bottom: 5em;
+        }
 
         p {
             margin: 0.5em 0;
@@ -1414,7 +1428,10 @@
         text-transform: uppercase;
         font-size: 1.3em;
         cursor: pointer;
-        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        text-decoration: none;
+        color: #000;
 
         &:after {
             content: '';
@@ -1436,6 +1453,7 @@
     &Col {
         display: flex;
         flex-direction: row;
+        // align-items: center;
 
         &__item {
             width: 33.3%;
@@ -1459,6 +1477,13 @@
             }
         }
 
+        &__content {
+            @media (min-width: 768px) {
+                min-height: 33em;
+            }
+            position: relative;
+        }
+
     }
 
     .section {
@@ -1477,6 +1502,10 @@
 
             .price {
                 &__text {
+                    color: #e6e6e6;
+                }
+
+                &__action {
                     color: #e6e6e6;
                 }
             }
@@ -1514,7 +1543,6 @@
         }
 
         .priceCol__item {
-
             &:after,
             &:before {
                 animation: lineUp 1s 0.5s forwards;
@@ -1691,24 +1719,30 @@
     }
 }
 
+.consultant {
+    p {
+        color: #57565c;
+    }
+}
+
 .noWebP {
     .brand .section__right {
-        background-image: url('../img/brand_bg.jpg');
+        background-image: url("../img/brand_bg.jpg");
     }
 
     .whoWeAre .section__right {
-        background-image: url('../img/who-we-are-bg.png');
+        background-image: url("../img/who-we-are-bg.png");
     }
 
     .about .section__left {
-        background-image: url('../img/about_bg.png');
+        background-image: url("../img/about_bg.png");
     }
 
     .profit .section__right {
-        background-image: url('../img/profit_bg.png');
+        background-image: url("../img/profit_bg.png");
     }
 
     .price .section__left {
-        background-image: url('../img/price_bg.jpg');
+        background-image: url("../img/price_bg.jpg");
     }
 }
